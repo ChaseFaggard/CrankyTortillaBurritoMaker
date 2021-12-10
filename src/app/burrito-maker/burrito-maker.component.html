@@ -13,7 +13,7 @@
         <button (click)="nextStep()">Next</button>
     </ng-container>
     <div class="submit-form" *ngIf="state === FormState.END && !submitted">
-        <p>Congratulations of your burrito! That looks great. Enter your information to submit your order.</p>
+        <p>Awesome! That burrito looks delicious! Enter your information to submit your order.</p>
         <form class="contact-form" #submitForm="ngForm" (submit)="submitted=true">
             <label for="firstName">First Name:</label>
             <input type="text" name="firstName" required><br>
