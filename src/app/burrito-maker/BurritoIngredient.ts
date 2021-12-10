@@ -1,5 +1,10 @@
 export default class BurritoIngredient {
 
-    constructor(public name:string, public url:string, public step:number) { }
+    constructor(public name:string, public step:number) { }
+
+    getPath():string {
+        return './assets/images/' + this.name + '.png'
+    }
+
 
 }
