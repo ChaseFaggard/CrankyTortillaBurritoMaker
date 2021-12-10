@@ -27,6 +27,8 @@ export class BurritoMakerComponent implements OnInit {
     this.state = FormState.STEP_1
   }
 
+  nextStep(): void { this.state++ }
+
   
 
 }
