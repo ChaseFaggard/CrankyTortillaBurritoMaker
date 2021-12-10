@@ -2,7 +2,8 @@
     <button *ngIf="state === FormState.START" (click)="start()">Create a burrito</button>
     <form *ngIf="state > FormState.START && state < FormState.END">
 
-        <ng-container *ngFor="let ingredient of ingredients">
+    
+        <ng-container class="ingredient-container" *ngFor="let ingredient of ingredients">
             <div class="ingredient" *ngIf="state === ingredient.step">
                 <img (click)="add(ingredient)" src="{{ingredient.getPath()}}" alt="{{ingredient.name}}">
             </div>
