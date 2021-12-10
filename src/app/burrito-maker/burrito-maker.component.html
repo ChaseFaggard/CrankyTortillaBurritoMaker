@@ -14,7 +14,7 @@
     </ng-container>
     <div class="submit-form" *ngIf="state === FormState.END && !submitted">
         <p>Awesome! That burrito looks delicious! Enter your information to submit your order.</p>
-        <form class="contact-form" #submitForm="ngForm" (submit)="submitted=true">
+        <form autocomplete="off" class="contact-form" #submitForm="ngForm" (submit)="submitted=true">
             <label for="firstName">First Name:</label>
             <input type="text" name="firstName" required><br>
             <label for="lastName">Last Name:</label>
