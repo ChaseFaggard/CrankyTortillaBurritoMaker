@@ -1,1 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,600');
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+:root {
+    --poppins: 'Poppins', sans-serif;
+    --architects: 'Architects Daughter', cursive;
+}
+html, button, a, input {
+    font-family: var(--poppins);
+}
+
+button {
+    margin-top: 20px;
+    background: white;
+    color: rgba(0, 0, 0, 0.685);
+    padding: 13px 20px;
+    border: 2px solid white;
+    border-radius: 0;
+    font-size: 25px;
+    float: none;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    &:hover {
+        border: 2px solid rgb(163, 163, 163);
+    }
+}

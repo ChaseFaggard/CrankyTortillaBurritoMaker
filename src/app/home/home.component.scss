@@ -1,0 +1,28 @@
+.main {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    h1 {
+        color: rgb(90, 81, 62);
+    }
+    h3 {
+        $color: rgb(105, 103, 103);
+        color: $color;
+        margin: 50px auto;
+        width: 60%;
+        background: rgb(229, 238, 180, .5);
+        padding: 40px;
+        border-radius: 25px;
+        font-size: 23px;
+        span {
+            font-style: italic;
+            color: lighten($color, 15%);
+        }
+    }
+    button {
+        a {
+            text-decoration: none;
+            color: black;
+        }
+    }
+}
