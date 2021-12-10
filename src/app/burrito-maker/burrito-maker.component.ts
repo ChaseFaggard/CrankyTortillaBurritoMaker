@@ -10,8 +10,8 @@ import { FormState } from './FormState';
 export class BurritoMakerComponent implements OnInit {
 
   ingredients:BurritoIngredient[] = [
-    new BurritoIngredient("flour-tortilla", 1),
-    new BurritoIngredient("corn-tortilla", 1),
+    new BurritoIngredient("flour-tortilla", FormState.STEP_1),
+    new BurritoIngredient("corn-tortilla", FormState.STEP_1),
   ]
 
   state:FormState = FormState.START
