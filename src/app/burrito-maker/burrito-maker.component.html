@@ -1,21 +1,27 @@
 <div class="burrito-maker">
     <button *ngIf="state === FormState.START" (click)="start()">Create a burrito</button>
-    <form *ngIf="state > FormState.START && state < FormState.END">
+    <ng-container *ngIf="state > FormState.START && state < FormState.END">
 
-        <ng-container *ngFor="let ingredient of ingredients">
-            <div class="ingredient" *ngIf="state === ingredient.step">
-                <img (click)="add(ingredient)" src="{{ingredient.getPath()}}" alt="{{ingredient.name}}">
-            </div>
-        </ng-container>
+        <div class="ingredientList">
+            <ng-container *ngFor="let ingredient of ingredients">
+                <div *ngIf="state === ingredient.step">
+                    <img (click)="add(ingredient)" src="{{ingredient.getPath()}}" alt="{{ingredient.name}}" [ngClass]="{'glow': contains(ingredient)}">
+                    <p>{{ingredient.getReadableName()}}</p>
+                </div>
+            </ng-container>
+        </div>
 
-
+        <button *ngIf="state > FormState.STEP_1" (click)="previousStep()">Back</button>
         <button (click)="nextStep()">Next</button>
+
+
+
         <ng-container *ngFor="let ingredient of selectedIngredients">
             <div class="ingredientStack">
                 <img src="{{ingredient.getPath()}}" alt="{{ingredient.name}}">
             </div>
         </ng-container>
-    </form>
+    </ng-container>
     <div *ngIf="state === FormState.END">
         
     </div>

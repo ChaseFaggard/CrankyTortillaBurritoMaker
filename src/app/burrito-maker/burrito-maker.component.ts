@@ -43,8 +43,14 @@ export class BurritoMakerComponent implements OnInit {
 
   nextStep(): void { this.state++ }
 
+  previousStep():void { this.state-- }
+
   add(ingredient:BurritoIngredient):void {
     this.selectedIngredients.push(ingredient)
+  }
+
+  contains(ingredient:BurritoIngredient):boolean {
+    return this.selectedIngredients.some(element => element.name === ingredient.name)
   }
 
 }
