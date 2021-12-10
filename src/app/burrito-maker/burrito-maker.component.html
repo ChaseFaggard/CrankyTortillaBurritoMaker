@@ -22,7 +22,19 @@
             </div>
         </ng-container>
     </ng-container>
-    <div *ngIf="state === FormState.END">
-        
+    <div class="submit-form" *ngIf="state === FormState.END && !submitted">
+        <p>Congratulations of your burrito! That looks great. Enter your information to submit your order.</p>
+        <form class="contact-form" #submitForm="ngForm" (submit)="submitted=true">
+            <label for="firstName">First Name:</label>
+            <input type="text" name="firstName" required><br>
+            <label for="lastName">Last Name:</label>
+            <input type="text" name="lastName" required><br>
+            <label for="email">Email: </label>
+            <input type="text" name="email" required><br>
+            <input [disabled]="!submitForm.valid" type="submit" value="Send">
+        </form>
+    </div>
+    <div class="submit" *ngIf="submitted">
+        <p>Thank you for your order.  It will be ready soon</p>
     </div>
 </div>
