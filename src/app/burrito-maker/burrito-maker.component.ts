@@ -12,6 +12,18 @@ export class BurritoMakerComponent implements OnInit {
   ingredients:BurritoIngredient[] = [
     new BurritoIngredient("flour-tortilla", FormState.STEP_1),
     new BurritoIngredient("corn-tortilla", FormState.STEP_1),
+    new BurritoIngredient("white-rice", FormState.STEP_2),
+    new BurritoIngredient("brown-rice", FormState.STEP_2),
+    new BurritoIngredient("black-beans", FormState.STEP_3),
+    new BurritoIngredient("pinto-beans", FormState.STEP_3),
+    new BurritoIngredient("barbacoa", FormState.STEP_4),
+    new BurritoIngredient("carnitas", FormState.STEP_4),
+    new BurritoIngredient("chicken", FormState.STEP_4),
+    new BurritoIngredient("steak", FormState.STEP_4),
+    new BurritoIngredient("sofritas", FormState.STEP_4),
+    new BurritoIngredient("cheese", FormState.STEP_5),
+    new BurritoIngredient("fajita-vegetables", FormState.STEP_5),
+    new BurritoIngredient("lettuce", FormState.STEP_5),
   ]
 
   state:FormState = FormState.START
