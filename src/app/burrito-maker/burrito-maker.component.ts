@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import BurritoIngredient from './BurritoIngredient';
+import { FormState } from './FormState';
 
 @Component({
   selector: 'burrito-maker',
@@ -10,11 +11,22 @@ export class BurritoMakerComponent implements OnInit {
 
   ingredients:BurritoIngredient[] = [
     new BurritoIngredient("flour-tortilla", 1),
-    new BurritoIngredient("corn-tortilla", 2)
+    new BurritoIngredient("corn-tortilla", 1),
   ]
+
+  state:FormState = FormState.START
 
   constructor() { }
 
   ngOnInit(): void { }
+
+  public get FormState(): typeof FormState { return FormState }
+
+  /* Initate burrito making process */
+  start():void {
+    this.state = FormState.STEP_1
+  }
+
+  
 
 }
