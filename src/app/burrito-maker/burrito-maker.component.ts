@@ -22,9 +22,11 @@ export class BurritoMakerComponent implements OnInit {
     new BurritoIngredient("steak", FormState.STEP_4),
     new BurritoIngredient("sofritas", FormState.STEP_4),
     new BurritoIngredient("cheese", FormState.STEP_5),
-    new BurritoIngredient("fajita-vegetables", FormState.STEP_5),
+    new BurritoIngredient("fajita-veggies", FormState.STEP_5),
     new BurritoIngredient("lettuce", FormState.STEP_5),
   ]
+
+  selectedIngredients:BurritoIngredient[] = []
 
   state:FormState = FormState.START
 
@@ -41,6 +43,8 @@ export class BurritoMakerComponent implements OnInit {
 
   nextStep(): void { this.state++ }
 
-  
+  add(ingredient:BurritoIngredient):void {
+    this.selectedIngredients.push(ingredient)
+  }
 
 }
