@@ -29,7 +29,7 @@ export class BurritoMakerComponent implements OnInit {
 
   selectedIngredients:BurritoIngredient[] = []
 
-  state:FormState = FormState.START
+  state:FormState = FormState.STEP_1
 
   constructor() { }
 
@@ -58,9 +58,14 @@ export class BurritoMakerComponent implements OnInit {
         const step = ingredient.step;
         if (!this.selectedIngredients.some(ingredient => ingredient.step === step)) {
           this.selectedIngredients.push(ingredient);
+        } else {
+          this.selectedIngredients.splice(this.selectedIngredients.length - 1, 1, ingredient);
         }
       } else if (ingredient.step === FormState.STEP_4) {
         if (this.selectedIngredients.filter(selectedIngredient => selectedIngredient.step === FormState.STEP_4).length < 2) {
+          this.selectedIngredients.push(ingredient);
+        } else {
+          this.selectedIngredients.splice(this.selectedIngredients.length - 2, 1);
           this.selectedIngredients.push(ingredient);
         }
       } else {
