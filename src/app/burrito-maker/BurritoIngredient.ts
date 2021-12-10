@@ -8,5 +8,9 @@ export default class BurritoIngredient {
         return 'assets/images/' + this.name + '.png'
     }
 
+    getReadableName():string {
+        return this.name.split('-').map(word => word[0].toUpperCase() + word.substr(1)).join(' ')
+    }
+
 
 }

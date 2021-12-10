@@ -47,6 +47,8 @@ export class BurritoMakerComponent implements OnInit {
     }
   }
 
+  previousStep():void { this.state-- }
+
   add(ingredient:BurritoIngredient):void {
     if (this.selectedIngredients.some(selectedIngredient => ingredient.name === selectedIngredient.name)) {
       this.selectedIngredients = this.selectedIngredients.filter(selectedIngredient => selectedIngredient.name !== ingredient.name);
@@ -64,6 +66,10 @@ export class BurritoMakerComponent implements OnInit {
         this.selectedIngredients.push(ingredient);
       }
     }
+  }
+
+  contains(ingredient:BurritoIngredient):boolean {
+    return this.selectedIngredients.some(element => element.name === ingredient.name)
   }
 
 }
